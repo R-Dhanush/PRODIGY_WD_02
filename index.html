@@ -28,6 +28,41 @@
 </head>
 <body>
 
+    <!-- Grid Container -->
+    <div class="grid-container">
+        <!-- Navbar -->
+        <header class="navbar">
+            <h1>TimeTrack</h1>
+            <div class="style-selector">
+                <button onclick="setDesign('general')">Classic</button>
+                <button onclick="setDesign('circle')">Circular</button>
+                <button onclick="setDesign('box')">Square</button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="stopwatch general" id="stopwatch">
+                <div id="display">00:00:00</div>
+                <button id="start">Start</button>
+                <button id="pause">Pause</button>
+                <button id="reset">Reset</button>
+                <button id="lap">Lap</button>
+            </div>
+        </main>
+
+        <!-- Aside for Lap Times -->
+        <aside class="lap-times">
+            <h2>Lap Times</h2>
+            <div id="laps"></div>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 ChronoFlex. All rights reserved.</p>
+        </footer>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
