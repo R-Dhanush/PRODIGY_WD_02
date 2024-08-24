@@ -41,6 +41,10 @@ body {
     padding: 0 1rem;
 }
 
+#fullscreen-toggle:hover, #themes:hover{
+    transform: scale(1.25);
+}
+
 /* Main Content */
 .main-content{
     grid-area: main;
@@ -86,8 +90,13 @@ body {
     height: auto;
     padding: 0.5em;
     border-radius: 5px;
+    cursor: pointer;
 }
 
+.main-content .button:hover, .button:focus{
+    transform: scale(1.25);
+    box-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.4);
+}
 #start{
     grid-area: button1;
     border: none;
@@ -176,4 +185,8 @@ body {
     font-size: 0.90rem;
     text-align: center;
     padding: 0.25rem 0;
+}
+
+@media (max-width: 768px){
+    
 }
