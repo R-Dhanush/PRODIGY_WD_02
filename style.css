@@ -9,6 +9,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #333;
   color: #fff;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .light-theme{
@@ -35,10 +36,12 @@ body {
     color: #fff;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
     z-index: 10;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #fullscreen-toggle, #themes{
     padding: 0 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #fullscreen-toggle:hover, #themes:hover{
@@ -91,6 +94,7 @@ body {
     padding: 0.5em;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .main-content .button:hover, .button:focus{
@@ -133,6 +137,7 @@ body {
     text-align: center;
     padding: 1em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #lap-times h2{
@@ -185,6 +190,7 @@ body {
     font-size: 0.90rem;
     text-align: center;
     padding: 0.25rem 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 @media (max-width: 768px) {
