@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const aside = document.getElementById("lap-times");
     const footer = document.getElementById("footer");
     const time = document.getElementById("display");
+    const lapsTableBody = document.querySelector("#laps tbody");
     let [milliseconds, seconds, minutes, hours] = [0,0,0,0];
     let int = null;
+    let lastLapTime = 0;
+    let lapCounter = 0;
 
     // Function to toggle the fullscreen
     fullscreenIcon.addEventListener("click", function() {
@@ -92,7 +95,14 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("reset").addEventListener("click", function(){
         clearInterval(int);
         [milliseconds, seconds, minutes, hours] = [0,0,0,0];
+        lastLapTime = 0;
+        lapCounter = 0; // Reset lap counter
         time.innerHTML = "00 : 00 : 00 : 000";
+        lapsContainer.innerHTML = "";
+    });
+
+    document.getElementById("lap").addEventListener("click", function() {
+        recordLap();
     });
 
     function displayTimer(){
@@ -116,5 +126,40 @@ document.addEventListener("DOMContentLoaded", function() {
         let ms = milliseconds.toString().padStart(3, '0');
 
         time.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
+    }
+
+    function recordLap() {
+        const totalMilliseconds = ((hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000) + milliseconds);
+        const lapMilliseconds = totalMilliseconds - lastLapTime;
+        lastLapTime = totalMilliseconds;
+
+        const lapTime = formatTime(lapMilliseconds);
+        const totalTime = formatTime(totalMilliseconds);
+
+        const lapRow = document.createElement("tr");
+        lapRow.innerHTML = `
+            <td>${lapCounter + 1}</td>
+            <td>${lapTime}</td>
+            <td>${totalTime}</td>
+        `;
+        lapsTableBody.appendChild(lapRow);
+
+        lapCounter++;
+    }
+
+    function formatTime(ms) {
+        let hours = Math.floor(ms / (60 * 60 * 1000));
+        ms = ms % (60 * 60 * 1000);
+        let minutes = Math.floor(ms / (60 * 1000));
+        ms = ms % (60 * 1000);
+        let seconds = Math.floor(ms / 1000);
+        ms = ms % 1000;
+
+        let h = hours.toString().padStart(2, '0');
+        let m = minutes.toString().padStart(2, '0');
+        let s = seconds.toString().padStart(2, '0');
+        let milliseconds = ms.toString().padStart(3, '0');
+
+        return `${h} : ${m} : ${s} : ${milliseconds}`;
     }
 });
