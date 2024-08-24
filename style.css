@@ -12,7 +12,7 @@ body {
 }
 
 .light-theme{
-    background-color: #ddd;
+    background-color: hsl(197, 88%, 88%);
 }
 
 .grid-container{
@@ -25,7 +25,7 @@ body {
 }
 
 /* Navbar Styling */
-.navbar{
+#navbar{
     grid-area: header;
     display: flex;
     justify-content: space-between;
@@ -33,6 +33,7 @@ body {
     padding: 0% 1rem;
     background-color: #000;
     color: #fff;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 #fullscreen-toggle, #themes{
@@ -115,19 +116,20 @@ body {
 }
 
 /* Aside for Lap Times */
-.lap-times{
+#lap-times{
     grid-area: aside;
-    background-color: hsla(0, 0%, 0%, 0.5);
+    background-color: #00000080;
+    background-color: #6acef680;
     text-align: center;
     
 }
 
-.lap-times h2{
+#lap-times h2{
     padding: 0.25rem;
 }
 
 /* Footer Styling */
-.footer{
+#footer{
     grid-area: footer;
     background-color: #001011;
     color: #fff;

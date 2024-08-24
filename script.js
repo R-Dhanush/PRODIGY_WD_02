@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const fullscreenIcon = document.getElementById("fullscreen-toggle");
-    const themesIcon = document.getElementById("themes"); 
+    const themesIcon = document.getElementById("themes");
+    const navbar = document.getElementById("navbar");
+    const aside = document.getElementById("lap-times");
+    const footer = document.getElementById("footer");
     const time = document.getElementById("display");
     let [milliseconds, seconds, minutes, hours] = [0,0,0,0];
     let int = null;
@@ -34,10 +37,22 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.body.classList.contains("light-theme")) {
             document.body.classList.remove("light-theme");
             themesIcon.title = "Light Theme";
+            navbar.style.backgroundColor = "#000";
+            navbar.style.color = "#fff";
+            aside.style.backgroundColor = "#00000080";
+            aside.style.color = "#fff";
+            footer.style.backgroundColor = "#000";
+            footer.style.color = "#fff";
             localStorage.setItem("theme", "dark");
         } else {
             document.body.classList.add("light-theme");
             themesIcon.title = "Dark Theme";
+            navbar.style.backgroundColor = "#6CCFF6";
+            navbar.style.color = "#000";
+            aside.style.backgroundColor = "#6acef680"
+            aside.style.color = "#000";
+            footer.style.backgroundColor = "#6CCFF6";
+            footer.style.color = "#000";
             localStorage.setItem("theme", "light");
         }
     });
@@ -46,9 +61,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "light") {
         document.body.classList.add("light-theme");
+        navbar.style.backgroundColor = "#6CCFF6";
+        navbar.style.color = "#000";
+        aside.style.backgroundColor = "#6acef680"
+        aside.style.color = "#000"
+        footer.style.backgroundColor = "#6CCFF6";
+        footer.style.color = "#000";
         themesIcon.title = "Dark Theme";
     } else {
         themesIcon.title = "Light Theme";
+        navbar.style.backgroundColor = "#000";
+        navbar.style.color = "#fff";
+        aside.style.backgroundColor = "#00000080";
+        aside.style.color = "#fff";
+        footer.style.backgroundColor = "#000";
+        footer.style.color = "#fff";
     }
 
     document.getElementById("start").addEventListener("click", function(){
