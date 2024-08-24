@@ -27,7 +27,6 @@ header, main, aside, footer {
     justify-content: center;
     align-items: center;
     padding: 0% 1rem;
-    background-color: #001011;
     color: #fff;
 }
 
@@ -87,16 +86,16 @@ header, main, aside, footer {
 /* Aside for Lap Times */
 .lap-times{
     grid-area: aside;
+    background-color: hsla(0, 0%, 0%, 0.5);
     text-align: center;
+    
 }
 
 .lap-times h2{
-    background-color: #757780;
     padding: 0.25rem;
 }
 
 .lap-times #laps{
-    background-color: #FFFFFC;
     border: 1px solid red;
 }
 
@@ -105,6 +104,7 @@ header, main, aside, footer {
     grid-area: footer;
     background-color: #001011;
     color: #fff;
+    font-size: 0.90rem;
     text-align: center;
     padding: 0.25rem 0;
 }
