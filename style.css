@@ -187,6 +187,13 @@ body {
     padding: 0.25rem 0;
 }
 
-@media (max-width: 768px){
-    
+@media (max-width: 768px) {
+    .grid-container {
+      grid-template-areas: 
+        "header"
+        "main"
+        "aside"
+        "footer";
+      grid-template-columns: 1fr;
+    }
 }
