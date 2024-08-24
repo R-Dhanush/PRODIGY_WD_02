@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Anton&family=Jersey+10&family=Kode+Mono:wght@400..700&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
@@ -64,14 +66,16 @@ body {
 
 #display{
     grid-area: display;
+    font-family: 'Kode Mono';
     text-align: center;
     background-color: #eee;
-    margin: auto;
     border-radius: 15px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    font-size: 3em;
+    font-weight: 900;
+    font-size: 2em;
     padding: 1em;
     color: #000;
+    white-space: nowrap;
 }
 
 .main-content .button{
