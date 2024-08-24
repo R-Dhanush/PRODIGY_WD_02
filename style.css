@@ -13,7 +13,7 @@ body {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
-    gap: 10px;
+    column-gap: 0.5rem;
 }
 
 header, main, aside, footer {
@@ -31,15 +31,80 @@ header, main, aside, footer {
     color: #fff;
 }
 
-
-main{
+/* Main Content */
+.main-content{
     grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-aside{
+#stopwatch{
+    margin: auto;
+    width: 75%;
+    height: auto;
+    display: grid;
+    grid-template-areas:"display display display display" "button1 button2 button3 button4";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid red;
+}
+
+#display{
+    grid-area: display;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+    border: 1px solid red;
+}
+
+.button{
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 10%;
+    border: 1px solid red;
+}
+
+#start{
+    grid-area: button1;
+}
+
+#pause{
+    grid-area: button2;
+}
+
+#reset{
+    grid-area: button3;
+}
+
+#lap{
+    grid-area: button4;
+}
+
+/* Aside for Lap Times */
+.lap-times{
     grid-area: aside;
+    text-align: center;
 }
 
-footer{
+.lap-times h2{
+    background-color: #757780;
+    padding: 0.25rem;
+}
+
+.lap-times #laps{
+    background-color: #FFFFFC;
+    border: 1px solid red;
+}
+
+/* Footer Styling */
+.footer{
     grid-area: footer;
+    background-color: #001011;
+    color: #fff;
+    text-align: center;
+    padding: 0.25rem 0;
 }
