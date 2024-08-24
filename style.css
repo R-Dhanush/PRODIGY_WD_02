@@ -130,6 +130,12 @@ body {
     padding: 0.25rem;
 }
 
+.table-container{
+    max-height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
 #laps {
     width: 100%;
     border-collapse: collapse;
@@ -138,6 +144,8 @@ body {
 #laps thead {
     background-color: #333;
     color: #fff;
+    position: sticky;
+    top: 0%;
 }
 
 #laps thead th {

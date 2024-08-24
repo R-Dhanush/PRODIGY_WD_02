@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
         lastLapTime = 0;
         lapCounter = 0; // Reset lap counter
         time.innerHTML = "00 : 00 : 00 : 000";
-        lapsContainer.innerHTML = "";
+        lapsTableBody.innerHTML = "";
     });
 
     document.getElementById("lap").addEventListener("click", function() {
