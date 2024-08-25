@@ -71,7 +71,7 @@ body {
   display: grid;
   grid-template-areas: "display display display display" "button1 button2 button3 button4";
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: 3fr 1fr;
   justify-items: center;
   align-items: center;
   gap: 0.5rem;
@@ -81,8 +81,12 @@ body {
 #display {
   grid-area: display;
   font-family: "Kode Mono";
+  align-content: center;
   text-align: center;
   background-color: #eee;
+  width: 80%;
+  height: auto;
+  aspect-ratio: 2 / 1;
   border-radius: 15px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   font-weight: 900;
@@ -251,7 +255,4 @@ body {
     font-size: 1.25em;
   }
 
-  .main-content .button {
-    width: 4em;
-  }
 }
